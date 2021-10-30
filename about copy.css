@@ -1,0 +1,215 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* NAV BAR*/
+.navbar {
+  background: #222222;
+  padding: 10px 40px 10px 40px;
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+  color: #ffffff;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap; /* khi kích thước container thay đổi và tổng chiều rộng các items cộng lại lớn hơn chiều rộng của container bọc ngoài thì nó sẽ rớt xuống */
+  align-items: center; /* item sẽ căn giữa theo chiều của cross axis. */
+  justify-content: center;
+}
+
+.navbar li.logo {
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.navbar ul div.nav-items {
+  display: inline-flex; /* - Phần tử sẽ hiển thị dưới dạng một cái thùng chứa flex dạng nội tuyến.    */
+  padding: 0 25px;
+}
+.navbar ul div.nav-items a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 12px;
+  color: #ffffff;
+}
+
+.navbar ul div.nav-items a:hover {
+  color: cyan;
+}
+
+.navbar ul .nav-search-icon {
+  height: 40px;
+  width: 240px;
+  display: flex;
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+.navbar ul .nav-search-icon input {
+  height: 100%;
+  width: 200px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  color: #000;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+}
+
+.navbar ul .nav-search-icon .icon {
+  height: 100%;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.navbar ul .nav-search-icon .icon:hover {
+  background: #e6e6e6;
+}
+
+.navbar ul .nav-search-icon .icon span {
+  color: #222222;
+  font-size: 18px;
+}
+
+.navbar ul li.btn {
+  font-size: 29px;
+  flex: 1;
+  padding: 0 40px;
+  display: none;
+}
+
+.navbar ul li.btn span {
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  line-height: 42px;
+  border: 1px solid #151515;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar ul li.btn span.show::before {
+  content: "\f00d";
+}
+
+@media screen and (max-width: 1052px) {
+  .navbar {
+    padding: 9px 40px 9px 0px;
+  }
+
+  .navbar li.logo {
+    display: none;
+  }
+
+  .navbar ul div.nav-items {
+    flex: 4;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar ul li.btn {
+    display: block;
+  }
+
+  .navbar {
+    z-index: 1;
+    padding: 9px 40px 9px 0px;
+  }
+
+  .navbar ul div.nav-items {
+    z-index: 0;
+    position: fixed;
+    top: -1000px;
+    right: 0;
+    width: 100%;
+    background: #222222;
+    display: inline-block;
+    transition: top 0.4s;
+  }
+
+  .navbar ul div.nav-items.show {
+    top: 60px;
+  }
+
+  .navbar ul div.nav-items li {
+    text-align: center;
+    line-height: 30px;
+    margin: 30px 0;
+  }
+
+  .wrapper-search.hide {
+    display: none;
+  }
+
+  #container.hide {
+    display: none;
+  }
+
+  .wrapper {
+    z-index: 0;
+  }
+}
+/* END NAV BAR */
+
+.container-fluid {
+  background-color: rgb(225, 240, 171) !important;
+}
+
+.container {
+  display: flex;
+  padding: 40px;
+}
+
+.container-introduct {
+  width: 900px;
+  margin-left: 100px;
+  background-color: white;
+  margin-right: 40px;
+  padding-bottom: 20px;
+}
+
+.container-contributors {
+  width: 400px;
+  background-color: white;
+  margin-left: 40px;
+  max-height: 500px;
+}
+
+h2.heading-text {
+  background-color: #aaedaaa1;
+  color: green;
+  padding: 8px 24px;
+}
+
+.heading {
+  padding: 18px 8px 8px 24px;
+}
+
+.text {
+  padding: 4px 8px 10px 24px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.contributor-list {
+  padding: 20px 4px 0 80px;
+  font-size: 18px;
+}
+
+.contributor-list-item {
+  padding: 5px;
+}
+
+.contributor-list-link {
+  text-decoration: none;
+  color: rgb(95, 95, 240);
+}
